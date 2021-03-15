@@ -97,13 +97,13 @@ plot.phylo.to.map<-function(x,type=c("phylogram","direct"),...){
 			cat("Re-optimizing object....\n")
 			cc<-aggregate(coords,by=list(rownames(coords)),mean)
 			cc<-matrix(as.matrix(cc[,2:3]),nrow(cc),2,dimnames=list(cc[,1],colnames(cc)[2:3]))
-			tree<-minRotate(tree,cc[,1])
+			# tree<-minRotate(tree,cc[,1])
 		} else if(x$direction=="rightwards"&&direction=="downwards"){
 			cat("\"phylo.to.map\" direction is \"rightwards\" but plot direction has been given as \"downwards\".\n")
 			cat("Re-optimizing object....\n")
 			cc<-aggregate(coords,by=list(rownames(coords)),mean)
 			cc<-matrix(as.matrix(cc[,2:3]),nrow(cc),2,dimnames=list(cc[,1],colnames(cc)[2:3]))
-			tree<-minRotate(tree,cc[,2])
+			# tree<-minRotate(tree,cc[,2])
 		}
 	}
 	# recompute ylim or xlim to leave space for the tree
